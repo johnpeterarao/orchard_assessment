@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { imageDTO } from "@/types/types";
 
 type articles = {
     title: string;
@@ -31,7 +32,14 @@ type imageGridSectionDataDTO = {
 }
 
 
-const SectionImageGrid = ({data, onConsoleLog} : {data: imageGridSectionDataDTO, onConsoleLog: (e: React.MouseEvent<HTMLAnchorElement>) => void}) => {
+
+interface SectionImageGridProps {
+    data: imageGridSectionDataDTO; 
+    onConsoleLog: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+    onOpenModal: (imageData: imageDTO) => void;
+}
+
+const SectionImageGrid: React.FC<SectionImageGridProps> = ({data, onConsoleLog, onOpenModal }) => {
     return (  
         <section 
             style={{ backgroundColor: data.backgroundColor}} 
@@ -47,6 +55,12 @@ const SectionImageGrid = ({data, onConsoleLog} : {data: imageGridSectionDataDTO,
                                 width={700} 
                                 height={350} 
                                 layout="intrinsic"
+                                onClick={ () => {
+                                    onOpenModal({
+                                        imgSrc: `/images/${data?.mobileCoverImage.src}`,
+                                        meta: data?.coverImage.meta
+                                    })
+                                }}
                             />
                         </div>
                         <h1 className="heading-1 grid__content--title">{data.heading}</h1> {/* comment 3  */}
@@ -71,6 +85,12 @@ const SectionImageGrid = ({data, onConsoleLog} : {data: imageGridSectionDataDTO,
                                 width={744} 
                                 height={600} 
                                 layout="intrinsic" 
+                                onClick={ () => {
+                                    onOpenModal({
+                                        imgSrc: `/images/${data?.mobileCoverImage.src}`,
+                                        meta: data?.coverImage.meta
+                                    })
+                                }}
                             />
                         </div>
                         <div className="grid__images--items flex-1 flex-wrap flex gap-2.5">

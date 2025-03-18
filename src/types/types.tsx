@@ -6,3 +6,8 @@ export interface Product {
     link: string;
 }
 
+export type imageDTO = {
+    imgSrc: string;
+    meta: string;
+    title?: string;
+}

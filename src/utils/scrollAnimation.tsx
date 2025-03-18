@@ -9,11 +9,6 @@ export const triggerAnimation = () => {
     const leftRotationValues = [-30, -20, -35];
     const rightRotationValues = [30, 20, 35];
     const yValues = [100, -150, -400];
-    // const ScrollTriggerSettings = {
-    //   trigger: ".product__section",
-    //   start: "top",
-    //   toggleActions: "play reverse play reverse"
-    // };
     const rows = gsap.utils.toArray('.grid__row') as HTMLDivElement[];
    
 
@@ -68,18 +63,15 @@ export const triggerAnimation = () => {
       });
 
     })
+    
+    const productRow = gsap.utils.toArray('.product__section') as HTMLDivElement[];
 
     
-    // Get all product sections
-    const rows2 = gsap.utils.toArray('.product__section') as HTMLDivElement[];
-
-    
-    rows2.forEach((row) => {
-   
+    productRow.forEach((row) => {
         const cards = row.querySelectorAll('.col') as NodeListOf<HTMLElement>;
 
         cards.forEach((card, cardIndex) => {
-            const yValues = [200, 150, 100];
+            const yValues = [300, 250, 200]; 
 
             card.style.opacity = `0`;
             
@@ -98,23 +90,15 @@ export const triggerAnimation = () => {
                         const progressPercentage = (progress * 100);
                         const totalPX = yValues[cardIndex];
                         const scrolledPX = (progressPercentage / 100) * totalPX;
-
                         const totalPxs = totalPX - scrolledPX;
+                        
+                        // See comment 12
 
                         card.style.transform = `translateY(-${ totalPxs < 0 ? 0 : totalPxs}px)`;
-                        
                         card.style.opacity = `${self.progress}`
                     }
                 }
             });
         });
     });
-
-    // gsap.to('.product__card', {
-    //   y: 0,
-    //   stagger: 5,
-    //   duration: 12,
-    //   ease: "power1.out",
-    //   scrollTrigger: ScrollTriggerSettings
-    // })
 }
