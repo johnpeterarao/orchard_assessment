@@ -1,4 +1,4 @@
-Hi Guys! I am John Peter, you can call me john or peter but let's go with Peter since john is way more common than peter haha! 
+Hi Guys Good day! I am John Peter, you can call me john or peter but let's go with Peter since john is way more common than peter haha! 
 
 Here you can see comments on my work
 
@@ -12,7 +12,7 @@ Comments:
 
 4. I used css property of -webkit-line-clamp so that if ever text is too long it will be cut on 11th line
 
-5. I am not sure if this part here is an article but html5 offers now article tags
+5. I am not sure if this part here is an article details, I am using html5 article details here so that it will be easier to read
 
 6. I used h2 for Sub-heading of the page and I think practice is to only use two h2 per page. *thou I am not sure if my seo basic knowledge is up to date now 
 
@@ -24,10 +24,14 @@ Comments:
 
 10. I used css property of -webkit-line-clamp so that if ever text is too long it will be cut on 3rd line but also we can cut this via javascript
 
-11. function for animation and it will only run if screen size is greater than 1025. Also upon checking please refresh when browser is resize for more accurate reading of screen size.
+11. function for animation and it will only run if screen size is greater than 1025 but if given more time and instruction we can create a different approach for mobile. Also upon checking please refresh when browser is resize for more accurate reading of screen size.
 
 12. Code block is dynamic you can change value this is so that it will go back to 0 in translation
 
 13. I did not use context for global storing of state because there are only 2 components handling the modal.
 
 14. For css, I can also write this in scss. I'm also using bootstrap, foundation, and bit of BEM on naming convention. 
+
+15. I used structured JSON data for rendering contents and sections settings. Usually on ecommerce sites widgets are configured also this way hehe!
+
+Happy checking! 
