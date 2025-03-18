@@ -15,9 +15,9 @@ const ProductCard = ({ product } : { product: Product} ) => {
                 layout="intrinsic" 
                 />
             </figure>
-            <figcaption className="product__card_text px-[30px] pt-[30px]">
-                <h3 className="text-white font-bold text-[21px] leading-[30px] mb-2.5">{product.title}</h3>
-                <p className="text-white font-light text-[21px] leading-[30px]">{product.text}</p>
+            <figcaption className="product__card_text px-5 pt-5 md:px-[30px] md:pt-[30px]">
+                <h3 className="text-white font-bold mb-2.5  text-[18px] leading-[27px] md:text-[21px] md:leading-[30px] ">{product.title}</h3>
+                <p className="text-white font-light text-base leading-7 md:text-[21px] md:leading-[30px]">{product.text}</p>
             </figcaption>
         </div>
     );

@@ -4,3 +4,4 @@ export interface Product {
     metaImage: string;
     image: string;
 }
+

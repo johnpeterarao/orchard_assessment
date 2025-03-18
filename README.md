@@ -18,3 +18,6 @@ Comments:
 
 7. I used figure for images and figcaption for the text, although some wyswig editor on cms platform convert figure and figcation to div when rendering. 
 
+8. I set the container max-width to 100% for laptop with smaller size 
+
+9. For better image in mobile, we can have different image size so that important branding or part of the image will not be cropped.
