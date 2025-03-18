@@ -3,5 +3,6 @@ export interface Product {
     text: string;
     metaImage: string;
     image: string;
+    link: string;
 }
 

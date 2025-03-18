@@ -21,3 +21,5 @@ Comments:
 8. I set the container max-width to 100% for laptop with smaller size 
 
 9. For better image in mobile, we can have different image size so that important branding or part of the image will not be cropped.
+
+10 .I used css property of -webkit-line-clamp so that if ever text is too long it will be cut on 3rd line but also we can cut this via javascript

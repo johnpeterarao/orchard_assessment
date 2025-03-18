@@ -31,14 +31,14 @@ type imageGridSectionDataDTO = {
 }
 
 
-const SectionImageGrid = ({data} : {data: imageGridSectionDataDTO}) => {
+const SectionImageGrid = ({data, onConsoleLog} : {data: imageGridSectionDataDTO, onConsoleLog: (e: React.MouseEvent<HTMLAnchorElement>) => void}) => {
     return (  
         <section 
             style={{ backgroundColor: data.backgroundColor}} 
-            className="grid__section py-[60px] md:py-[120px]"
+            className="grid__section py-[60px] md:py-[120px] overflow-hidden"
         >   {/* See comment #2  */}
             <div className="container">
-                <div className={`md:flex ${data?.appearance != 'text-first' ? 'flex-row-reverse' : ''} `}>
+                <div className={`grid__row md:flex ${data?.appearance != 'text-first' ? 'flex-row-reverse' : ''} `}>
                     <div className={`grid__content md:w-[36.43%] ${data?.appearance != 'text-first' ? 'md:pl-[30px]' : 'md:pr-[30px]'}`}>
                         <div className="block mb-5 grid__content--cover h-[210px] md:hidden">
                             <Image 
@@ -46,7 +46,7 @@ const SectionImageGrid = ({data} : {data: imageGridSectionDataDTO}) => {
                                 alt={data?.mobileCoverImage.meta} 
                                 width={700} 
                                 height={350} 
-                                layout="intrinsic" 
+                                layout="intrinsic"
                             />
                         </div>
                         <h1 className="heading-1 grid__content--title">{data.heading}</h1> {/* comment 3  */}
@@ -56,7 +56,7 @@ const SectionImageGrid = ({data} : {data: imageGridSectionDataDTO}) => {
                             <article key={ind}> {/* comment 5  */}
                                 <h5 className="font-bold uppercase text-red text-[15px] mb-2.5 leading-[21px]">{article.caption}</h5>
                                 <h3>
-                                    <Link className="font-bold uppercase text-white text-[18px] leading-[27px] md:text-[21px] md:leading-[30px]" href="/test-link" onClick={(e) => handleConsoleLog(e)}>
+                                    <Link className="font-bold uppercase text-white text-[18px] leading-[27px] md:text-[21px] md:leading-[30px]" href="/test-link" onClick={(e) => onConsoleLog(e)}>
                                         {article.title}
                                     </Link>
                                 </h3>

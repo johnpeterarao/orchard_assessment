@@ -7,7 +7,7 @@ type productSectionDataDTO = {
     backgroundColor: string
 }
 
-const ProductsSection = ({ data } : { data: productSectionDataDTO} ) => {
+const ProductsSection = ({ data, onConsoleLog } : { data: productSectionDataDTO, onConsoleLog: (e: React.MouseEvent<HTMLAnchorElement>) => void } ) => {
     return (  
         <section 
             style={{ backgroundColor: data.backgroundColor}} 
@@ -20,7 +20,7 @@ const ProductsSection = ({ data } : { data: productSectionDataDTO} ) => {
                     {
                         data?.products.map((product: Product, index: number) => (
                             <div className="col mb-5 md:flex-1 md:mb-0" key={index}>
-                                <ProductCard product={product} />
+                                <ProductCard product={product} onConsoleLog={onConsoleLog}/>
                             </div>
                         ))
                     }
