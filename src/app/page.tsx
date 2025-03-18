@@ -1,103 +1,121 @@
+'use client';
+
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const handleConsoleLog = (e: any) => {
+    console.log(`Link --> ${e.currentTarget.getAttribute('href')}. Element --> ${e.currentTarget}`);
+    e.preventDefault();
+  }
+
+  return (
+    <>
+    <section className="bg-darkbg py-[120px] grid__section"> {/* See comment #2  */}
+      <div className="container">
+        <div className="flex">
+          <div className="grid__images w-[63.57%] flex flex-wrap gap-2.5">
+              <div className="grid__images--cover flex-1">
+                <Image 
+                  src="/images/img-0.jpg" 
+                  alt="Food wrapped in banana leaves being steamed to enhance flavor." 
+                  width={744} 
+                  height={600} 
+                  layout="intrinsic" 
+                />
+              </div>
+              <div className="grid__images--items flex-1 flex-wrap flex gap-2.5">
+                <Image 
+                  src="/images/img-1.jpg" 
+                  alt="Ingredients arranged for before cooking."
+                  width={744} 
+                  height={400} 
+                  layout="intrinsic" 
+                />
+                <Image 
+                  src="/images/img-2.jpg" 
+                  alt="Different stages of boiled eggs showing soft, medium, and hard-boiled variations." 
+                  width={744} 
+                  height={400} 
+                  layout="intrinsic" 
+                />
+              </div>
+          </div>
+          <div className="grid__content w-[36.43%] pl-[30px]">
+            <h1 className="heading-1 grid__content--title">What does Cooking mean?</h1> {/* comment 3  */}
+            <p className="grid__content--text text-white font-light text-[21px] leading-[30px] mb-[30px]">Is it simply applying heat to a food product? A way of making certain food safe to eat? Or a way to create flavour and make food more appealing? This is just part of what Hervé This, the father of molecular gastronomy, has dedicated his life to finding out. We spoke to him to find out what his experiments have told him. And in the process even discovered the secret to cooking the perfect egg...</p>  {/* comment 4  */}
+
+            <article> {/* comment 5  */}
+              <h5 className="font-bold uppercase text-red text-[15px] mb-2.5 leading-[21px]">The perfect egg</h5>
+              <h3><Link className="font-bold uppercase text-white text-[21px] leading-[30px]" href="/test-link" onClick={(e) => handleConsoleLog(e)}>
+              Keep water between 67 and 68°C for a flavourful, tender yolk</Link></h3>
+            </article>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        
+      </div>
+    </section>
+    <section className="bg-darkbg py-[120px] product__section">
+      <div className="container">
+        <div className="text-center">
+          <h2 className="heading-1 inline-block">Taste the Colours</h2> {/* comment 6  */}
+          <div className="flex flex-wrap gap-2.5">
+            <div className="col flex-1">
+              <div className="product__card">
+                <figure className="product__card_img h-[300px]"> {/* comment 7  */}
+                  <Image 
+                    src="/images/img-3.jpg" 
+                    alt="Red reminds us of berries" 
+                    width={750} 
+                    height={300} 
+                    layout="intrinsic" 
+                  />
+                </figure>
+                <figcaption className="product__card_text px-[30px] pt-[30px]">
+                  <h3 className="text-white font-bold text-[21px] leading-[30px] mb-2.5">RED</h3>
+                  <p className="text-white font-light text-[21px] leading-[30px]">Red foods remind us of berries and soft fruits, so we anticipate a sweet taste.</p>
+                </figcaption>
+              </div>
+            </div>
+            <div className="col flex-1">
+              <div className="product__card">
+                <figure className="product__card_img h-[300px]">
+                  <Image 
+                    src="/images/img-4.jpg" 
+                    alt="Fresh, zingy green colours are reminiscent of unripe fruit, promising sour or acid flavours" 
+                    width={750} 
+                    height={300} 
+                    layout="intrinsic" 
+                  />
+                </figure>
+                <figcaption className="product__card_text px-[30px] pt-[30px]">
+                  <h3 className="text-white font-bold text-[21px] leading-[30px] mb-2.5">Green</h3>
+                  <p className="text-white font-light text-[21px] leading-[30px]">Fresh, zingy green colours are reminiscent of unripe fruit, promising sour or acid flavours</p>
+                </figcaption>
+              </div>
+            </div>
+            <div className="col flex-1">
+              <div className="product__card">
+                <figure className="product__card_img h-[300px]">
+                  <Image 
+                    src="/images/img-5.jpg" 
+                    alt="White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat." 
+                    width={750} 
+                    height={300} 
+                    layout="intrinsic" 
+                  />
+                </figure>
+                <figcaption className="product__card_text px-[30px] pt-[30px]">
+                  <h3 className="text-white font-bold text-[21px] leading-[30px] mb-2.5">White</h3>
+                  <p className="text-white font-light text-[21px] leading-[30px]">White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat.</p>
+                </figcaption>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </>
   );
 }
