@@ -24,6 +24,6 @@ Comments:
 
 10. I used css property of -webkit-line-clamp so that if ever text is too long it will be cut on 3rd line but also we can cut this via javascript
 
-11. function for animation and it will only run if screen size is greater than 1025. 
+11. function for animation and it will only run if screen size is greater than 1025. Also upon checking please refresh when browser is resize for more accurate reading of screen size.
 
 12. Code block is dynamic you can change value this is so that it will go back to 0 in translation
