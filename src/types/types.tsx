@@ -1,13 +1,13 @@
 export interface Product {
     title: string;
     text: string;
-    metaImage: string;
+    alt: string;
     image: string;
     link: string;
 }
 
 export type imageDTO = {
     imgSrc: string;
-    meta: string;
+    alt: string;
     title?: string;
 }

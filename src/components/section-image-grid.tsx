@@ -20,11 +20,11 @@ type imageGridSectionDataDTO = {
     articles: articles[];
     coverImage: {
         src: string;
-        meta: string
+        alt: string
     };
     mobileCoverImage: {
         src: string;
-        meta: string;
+        alt: string;
         //see comment 9
     };
     gridImages: gridImage[];
@@ -51,14 +51,15 @@ const SectionImageGrid: React.FC<SectionImageGridProps> = ({data, onConsoleLog, 
                         <div className="block mb-5 grid__content--cover h-[210px] md:hidden">
                             <Image 
                                 src={`/images/${data?.mobileCoverImage.src}`} 
-                                alt={data?.mobileCoverImage.meta} 
+                                alt={data?.mobileCoverImage.alt} 
                                 width={700} 
                                 height={350} 
                                 layout="intrinsic"
+                                className="cursor-pointer"
                                 onClick={ () => {
                                     onOpenModal({
                                         imgSrc: `/images/${data?.mobileCoverImage.src}`,
-                                        meta: data?.coverImage.meta
+                                        alt: data?.coverImage.alt
                                     })
                                 }}
                             />
@@ -81,14 +82,15 @@ const SectionImageGrid: React.FC<SectionImageGridProps> = ({data, onConsoleLog, 
                         <div className="grid__images--cover flex-1 hidden md:block">
                             <Image 
                                 src={`/images/${data?.coverImage.src}`} 
-                                alt={data?.coverImage.meta} 
+                                alt={data?.coverImage.alt} 
                                 width={744} 
                                 height={600} 
                                 layout="intrinsic" 
+                                className="cursor-pointer"
                                 onClick={ () => {
                                     onOpenModal({
                                         imgSrc: `/images/${data?.mobileCoverImage.src}`,
-                                        meta: data?.coverImage.meta
+                                        alt: data?.coverImage.alt
                                     })
                                 }}
                             />
@@ -102,6 +104,13 @@ const SectionImageGrid: React.FC<SectionImageGridProps> = ({data, onConsoleLog, 
                                     height={400} 
                                     layout="intrinsic" 
                                     key={ind}
+                                    className="cursor-pointer"
+                                    onClick={ () => {
+                                    onOpenModal({
+                                        imgSrc: `/images/${imageBlock.img}`,
+                                        alt: imageBlock.alt
+                                    })
+                                }}
                                 />
                             ))}
                         </div>

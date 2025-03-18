@@ -4,7 +4,7 @@ Here you can see comments on my work
 
 
 Comments:
-1. container size comment = I don't know if we are going to use fluid container or fix width container, usually I asked the designer about this because some prefer fluid and others are fixed. So for this one what I am going to do is fluid container. First I calculated the width of all content and its total width is "1146" and I now will add 40px for the 20px padding that I'm going to apply each side. Now the total width is 1186, now I will divide (1186 / 1440) * 100 = 82.36%; and for beyond 1920px I will set a standard  max-width pixel for the container so that it will not stretch on bigger sizes screen
+1. container size comment = I don't know if we are going to use fluid container or fix width container, usually I asked the designer about this because some prefer fluid and others are fix width container. So for this one what I am going to do is fluid container. First I calculated the width of all content and its total width is "1146" and I now will add 40px for the 20px padding that I'm going to apply each side. Now the total width is 1186, now I will divide (1186 / 1440) * 100 = 82.36%; and for beyond 1920px I will set a fix max-width pixel for the container so that it will not stretch on bigger sizes screen
 
 2. (Grid section) For this kind of section I coordinate with designer if what should be the behaviour of elements. If images should follow the size of the content or content should follow the images column but based on the design I noticed that there is a small gap in the bottom part of the text while on the there's no gap in top. Which means that its not being vertically centered. What I did is that images will follow the content size when the content size is bigger than the image size.
 
@@ -27,3 +27,7 @@ Comments:
 11. function for animation and it will only run if screen size is greater than 1025. Also upon checking please refresh when browser is resize for more accurate reading of screen size.
 
 12. Code block is dynamic you can change value this is so that it will go back to 0 in translation
+
+13. I did not use context for global storing of state because there are only 2 components handling the modal.
+
+14. For css, I can also write this in scss. I'm also using bootstrap, foundation, and bit of BEM on naming convention. 

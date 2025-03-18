@@ -10,11 +10,11 @@ export const imageGridData = {
     ],
     coverImage: {
         src: 'img-0.jpg',
-        meta: 'Food wrapped in banana leaves being steamed to enhance flavor.'
+        alt: 'Food wrapped in banana leaves being steamed to enhance flavor.'
     },
     mobileCoverImage: {
         src: 'img-0.jpg',
-        meta: 'Food wrapped in banana leaves being steamed to enhance flavor.'
+        alt: 'Food wrapped in banana leaves being steamed to enhance flavor.'
     },
     gridImages: [
         {

@@ -16,8 +16,8 @@ import Modal from "@/components/modal";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentImageSrc, setCurrentImageSrc] = useState<imageDTO>({ title: '', meta: '', imgSrc: ''});
+  const [isModalOpen, setIsModalOpen] = useState(false); //see comment 13
+  const [currentImageSrc, setCurrentImageSrc] = useState<imageDTO>({ title: '', alt: '', imgSrc: ''});
 
   useEffect(() => {
     triggerAnimation(); //Comment 11
@@ -30,7 +30,7 @@ export default function Home() {
   
   const closeModal = () => {
     setIsModalOpen(false); 
-    setCurrentImageSrc({ title: '', meta: '', imgSrc: ''});
+    setCurrentImageSrc({ title: '', alt: '', imgSrc: ''});
   };
 
   const handleConsoleLog = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -42,8 +42,10 @@ export default function Home() {
   return (
     <ReactLenis root>
       <SectionImageGrid data={imageGridData} onConsoleLog={handleConsoleLog} onOpenModal={handleOpenModal}/>
-      <ProductsSection data={productSectionData} onConsoleLog={handleConsoleLog}/>
-      {isModalOpen && (
+
+      <ProductsSection data={productSectionData} onConsoleLog={handleConsoleLog} onOpenModal={handleOpenModal}/>
+      
+      { isModalOpen && (
         <Modal 
           isOpen={isModalOpen} 
           onClose={closeModal} 
